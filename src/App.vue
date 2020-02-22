@@ -6,13 +6,9 @@
     </div>
 
     <div class="right">
-      <div class="name">
-        Maxime Moreillon
-      </div>
+      <div class="name">Maxime Moreillon</div>
 
-      <div class="subtitle">
-        IoT / AI / WEB solutions
-      </div>
+      <div class="subtitle">IoT, AI & Web solutions</div>
 
       <div class="links">
         <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
@@ -88,19 +84,44 @@ body {
   flex-direction: column;
 }
 
-.links > * {
-}
+
 
 #app > * {
   margin: 25px;
 }
 
 .right {
+  height: 25vmin;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  opacity: 0; /* needs to be transparent until loading complete */
+
 }
 .name {
-  font-size: 200%;
+  font-size: 7vmin;
+}
+
+.subtitle {
+  font-size: 3vmin;
+}
+
+body.loaded .right  {
+  animation-name: fade;
+  animation-delay: 1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes fade {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 </style>

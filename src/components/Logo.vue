@@ -40,11 +40,9 @@ export default {
 .logo_wrapper{
   /* This is a rotating frame for all logo elements */
 
-  outline: 1px solid red;
-
   /* sizing */
-  width: 40vmin;
-  height: 40vmin;
+  width: 25vmin;
+  height: 25vmin;
 
   /* IE compatibility */
   position: relative;
@@ -167,15 +165,6 @@ body.loaded .logo_layer_full{
   100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
-  }
-}
-
-@keyframes fade {
-  0%   {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
