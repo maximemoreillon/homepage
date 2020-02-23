@@ -12,8 +12,8 @@
 
       <div class="links">
         <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
-        <Link :icon="['fab','facebook']" label="Facebook" url="https://github.com/maximemoreillon"/>
-        <Link :icon="['fab','linkedin']" label="Linkedin" url="https://github.com/maximemoreillon"/>
+        <Link :icon="['fab','facebook']" label="Facebook" url="https://www.facebook.com/maxime.moreillon"/>
+        <Link :icon="['fab','linkedin']" label="Linkedin" url="https://www.linkedin.com/in/maxime-moreillon/"/>
       </div>
     </div>
 
