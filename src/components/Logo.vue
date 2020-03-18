@@ -2,6 +2,12 @@
   <!-- Logo wrapper for global rotation -->
   <div class="logo_wrapper">
 
+    <!-- The full logo that overlays with the parts once animation is done
+     This is used to hide seams between logo parts -->
+    <div class="logo_layer logo_layer_full">
+      <img class="logo_part logo_full" src="@/assets/logo/logo.svg">
+    </div>
+
     <!-- Logo layers that can rotate independantly -->
     <div class="logo_layer logo_layer_1">
       <img class="logo_part logo_part_1" src="@/assets/logo/1.svg">
@@ -19,11 +25,7 @@
       <img class="logo_part logo_part_9" src="@/assets/logo/9.svg">
     </div>
 
-    <!-- The full logo that overlays with the parts once animation is done
-     This is used to hide seams between logo parts -->
-    <div class="logo_layer logo_layer_full">
-      <img class="logo_part logo_full" src="@/assets/logo/logo.svg">
-    </div>
+
 
   </div>
 </template>
@@ -41,8 +43,8 @@ export default {
   /* This is a rotating frame for all logo elements */
 
   /* sizing */
-  width: 25vmin;
-  height: 25vmin;
+  width: 20vw;
+  height: 20vw;
 
   /* IE compatibility */
   position: relative;
@@ -96,6 +98,10 @@ export default {
   top: 0;
   left: 0;
 
+}
+
+.logo_layer_full {
+  z-index: 10;
 }
 
 

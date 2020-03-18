@@ -34,10 +34,10 @@ export default {
 <style scoped>
 
 a {
-  font-size: 2vmin;
+  font-size: 1.5vw;
   text-decoration: none;
   color: black;
-  padding: 0.5vmin 0;
+  padding: 0.5vw 0;
 }
 
 a:hover{

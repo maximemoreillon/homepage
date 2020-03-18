@@ -87,11 +87,11 @@ body {
 
 
 #app > * {
-  margin: 25px;
+  margin: 2vw;
 }
 
 .right {
-  height: 25vmin;
+  /*height: 20vw;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -99,11 +99,11 @@ body {
 
 }
 .name {
-  font-size: 7vmin;
+  font-size: 6vw;
 }
 
 .subtitle {
-  font-size: 3vmin;
+  font-size: 2.5vw;
 }
 
 body.loaded .right  {
