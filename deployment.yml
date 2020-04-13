@@ -15,7 +15,7 @@ spec:
 
       containers:
       - name: homepage
-        image: 127.0.0.1/homepage
+        image: 127.0.0.1:5000/homepage
         imagePullPolicy: Always
         ports:
         - containerPort: 80
