@@ -10,10 +10,22 @@
 
       <div class="subtitle">IoT, AI & Web solutions</div>
 
-      <div class="links">
-        <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
-        <Link :icon="['fab','facebook']" label="Facebook" url="https://www.facebook.com/maxime.moreillon"/>
-        <Link :icon="['fab','linkedin']" label="Linkedin" url="https://www.linkedin.com/in/maxime-moreillon/"/>
+      <div class="links_wrapper">
+        <div class="links_column">
+          <Link :icon="['fas','newspaper']" label="Articles" url="https://cms.maximemoreillon.com"/>
+          <Link :icon="['fas','tools']" label="Projects" url="https://cms.maximemoreillon.com/?tag_id=111"/>
+
+        </div>
+        <div class="links_column">
+          <Link :icon="['fab','facebook']" label="Facebook" url="https://www.facebook.com/maxime.moreillon"/>
+          <Link :icon="['fab','linkedin']" label="Linkedin" url="https://www.linkedin.com/in/maxime-moreillon/"/>
+        </div>
+        <div class="links_column">
+          <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
+          <Link :icon="['fas','graduation-cap']" label="Google scholar" url="https://scholar.google.com/citations?user=0gkCupAAAAAJ&hl=en"/>
+        </div>
+
+        <!--<Link :icon="['fab','npm']" label="npm" url="https://www.npmjs.com/~moreillon"/>-->
       </div>
     </div>
 
@@ -72,6 +84,7 @@ body {
   width: 100%;
   height: 100%;
 
+  /* side by side layout */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,25 +92,38 @@ body {
   overflow: hidden;
 }
 
-.links {
+.links_wrapper {
+  margin-top: 0.5vw;
+  display: flex;
+}
+
+.links_column {
+  /* grow horizontally */
+  flex-grow: 1;
+  flex-basis: 0;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 
 
 #app > * {
+  /* margin between logo and text */
   margin: 2vw;
 }
 
+
 .right {
-  /*height: 20vw;*/
+  /* contains name, subtitle and links */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+
   opacity: 0; /* needs to be transparent until loading complete */
 
 }
+
 .name {
   font-size: 6vw;
 }

@@ -1,25 +1,20 @@
 <template>
-  <!-- Logo wrapper for global rotation -->
   <a class="link" v-bind:href="url">
-    <font-awesome-icon :icon="icon" />
+    <font-awesome-icon v-bind:icon="icon" />
     <span class="label">{{label}}</span>
   </a>
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
-import { faGithub, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
 
-library.add(faGithub, faFacebook, faLinkedin)
 
 
 export default {
   name: 'Link',
   components: {
-    FontAwesomeIcon
+
   },
   props: {
     label: String,
@@ -34,10 +29,12 @@ export default {
 <style scoped>
 
 a {
-  font-size: 1.5vw;
+  font-size: 1.75vw;
   text-decoration: none;
   color: black;
   padding: 0.5vw 0;
+
+  transition: color 0.25s;
 }
 
 a:hover{
@@ -45,7 +42,8 @@ a:hover{
 }
 
 .label {
-  margin-left: 2px;
+  /* margin between icon and lavel */
+  margin-left: 0.5vw;
 }
 
 </style>

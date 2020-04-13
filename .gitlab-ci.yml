@@ -1,0 +1,21 @@
+stages:
+  - containerization
+  - deployment
+
+variables:
+  APPLICATION_NAME: homepage
+  CONTAINER_REGISTRY: 172.104.113.194:5000
+
+containerization:
+  stage: containerization
+  script:
+    - docker build -t ${CONTAINER_REGISTRY}/${APPLICATION_NAME} .
+    - docker push ${CONTAINER_REGISTRY}/${APPLICATION_NAME}
+
+deployment:
+  stage: deployment
+  script:
+    - envsubst < deployment.yml | kubectl apply -f -
+    - kubectl rollout restart deployment/${APPLICATION_NAME}
+  environment:
+    name: staging
