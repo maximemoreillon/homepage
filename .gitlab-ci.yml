@@ -4,7 +4,7 @@ stages:
 
 variables:
   APPLICATION_NAME: homepage
-  CONTAINER_REGISTRY: 172.104.113.194:5000
+  CONTAINER_REGISTRY: 127.0.0.1:5000
 
 containerization:
   stage: containerization
