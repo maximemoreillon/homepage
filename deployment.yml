@@ -1,74 +1,54 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homepage
+  name: ${APPLICATION_NAME}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: homepage
+      app: ${APPLICATION_NAME}
   template:
     metadata:
       labels:
-        app: homepage
+        app: ${APPLICATION_NAME}
     spec:
-
       containers:
-      - name: homepage
-        image: localhost:32000/homepage
+      - name: ${APPLICATION_NAME}
+        image: ${CONTAINER_REGISTRY}/${APPLICATION_NAME}
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-
 ---
+# Service, so that the deployment can communicate with other services
 apiVersion: v1
 kind: Service
 metadata:
-  name: homepage
+  name: ${APPLICATION_NAME}
 spec:
   ports:
   - port: 80
   selector:
-    app: homepage # Name of the service
+    app: ${APPLICATION_NAME} # Name of the service
   type: ClusterIP
 ---
-# prod_issuer.yaml
-apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer # Maybe could make it just an issuer for individual apps
-metadata:
-  name: homepage-letsencrypt
-spec:
-  acme:
-    # The ACME server URL
-    server: https://acme-v02.api.letsencrypt.org/directory
-    # Email address used for ACME registration
-    email: m.moreillon@gmail.com
-    # Name of a secret used to store the ACME account private key
-    privateKeySecretRef:
-      name: homepage-letsencrypt
-    # Enable the HTTP-01 challenge provider
-    solvers:
-    - http01:
-        ingress:
-          class:  nginx
----
+# Ingress, so that the service can communicate with the exterior world
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: homepage # Name of the ingress
+  name: ${APPLICATION_NAME} # Name of the ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    cert-manager.io/cluster-issuer: "homepage-letsencrypt"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" # This is necessary, no idea why
 spec:
   tls:
   - hosts:
-    - maximemoreillon.com
-    secretName: homepage-letsencrypt
+    - ${CERTIFICATE_DOMAIN}
+    secretName: ${APPLICATION_NAME}-letsencrypt # Name of the secret, i.e. the certificates
   rules:
-  - host: maximemoreillon.com
+  - host: ${CERTIFICATE_DOMAIN}
     http:
       paths:
       - path: /
         backend:
-          serviceName: homepage # Name of the service
+          serviceName: ${APPLICATION_NAME} # Name of the service
           servicePort: 80
