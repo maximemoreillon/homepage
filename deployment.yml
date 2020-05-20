@@ -18,6 +18,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: registry-credentials # Used to log in the registry
 ---
 # Service, so that the deployment can communicate with other services
 apiVersion: v1
@@ -43,7 +45,7 @@ spec:
   tls:
   - hosts:
     - ${CERTIFICATE_DOMAIN}
-    secretName: ${APPLICATION_NAME}-letsencrypt # Name of the secret, i.e. the certificates
+    secretName: ${APPLICATION_NAME} # Name of the secret, i.e. the certificates
   rules:
   - host: ${CERTIFICATE_DOMAIN}
     http:
