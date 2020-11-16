@@ -11,6 +11,15 @@
       <div class="subtitle">IoT, AI & Web solutions</div>
 
       <div class="links_wrapper">
+
+        <Link
+          v-for="(link, index) in links"
+          v-bind:key="`link${index}`"
+          :icon="link.icon"
+          :label="link.label"
+          :url="link.url"/>
+
+        <!--
         <div class="links_column">
           <Link :icon="['fas','newspaper']" label="Articles" url="https://cms.maximemoreillon.com"/>
           <Link :icon="['fas','tools']" label="Projects" url="https://cms.maximemoreillon.com/?tag_id=111"/>
@@ -24,8 +33,8 @@
           <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
           <Link :icon="['fas','graduation-cap']" label="Google scholar" url="https://scholar.google.com/citations?user=0gkCupAAAAAJ&hl=en"/>
         </div>
+        -->
 
-        <!--<Link :icon="['fab','npm']" label="npm" url="https://www.npmjs.com/~moreillon"/>-->
       </div>
     </div>
 
@@ -52,6 +61,20 @@ export default {
   },
   data(){
     return {
+      links: [
+        {icon: ['fas','newspaper'], label: 'Articles', url: 'https://cms.maximemoreillon.com'},
+        {icon: ['fas','tools'], label: 'Projects', url: 'https://cms.maximemoreillon.com/?tag_id=111'},
+        {icon: ['fab','linkedin'], label: 'LinkedIn', url: 'https://www.linkedin.com/in/maxime-moreillon'},
+        {icon: ['fab','facebook'], label: 'Facebook', url: 'https://cms.maximemoreillon.com'},
+        {icon: ['fab','instagram'], label: 'Instagram', url: 'https://www.instagram.com/maxime_moreillon/'},
+        {icon: ['fab','youtube'], label: 'YouTube', url: 'https://www.youtube.com/channel/UCvk0FMjKbin0FGU9LPe-T_g'},
+        {icon: ['fab','docker'], label: 'Docker Hub', url: 'https://hub.docker.com/u/moreillon'},
+        {icon: ['fab','github'], label: 'GitHub', url: 'https://github.com/maximemoreillon'},
+        {icon: ['fab','gitlab'], label: 'GitLab', url: 'https://gitlab.com/moreillon'},
+        {icon: ['fab','npm'], label: 'NPM', url: 'https://www.npmjs.com/~moreillon'},
+        {icon: ['fas','graduation-cap'], label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=0gkCupAAAAAJ'},
+        {icon: ['fab','medium'], label: 'Medium', url: 'https://medium.com/@m.moreillon'},
+      ]
     }
 
   },
@@ -73,7 +96,7 @@ export default {
 
 body {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
 
 
   height: 100vh;
@@ -94,7 +117,23 @@ body {
 
 .links_wrapper {
   margin-top: 0.5vw;
+  //outline: 1px solid red;
+
+  display: grid;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  grid-template-columns: auto auto auto;
+
+
+
+  max-height: 15vw;
+
+}
+
+.links_wrapper > * {
+
 }
 
 .links_column {

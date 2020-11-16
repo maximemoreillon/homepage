@@ -33,6 +33,12 @@
 <script>
 export default {
   name: 'Logo',
+  data(){
+    return {
+      window_loaded: false,
+    }
+  },
+
 
 }
 </script>

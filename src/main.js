@@ -13,6 +13,9 @@ import {
   faNpm,
   faDocker,
   faYoutube,
+  faMedium,
+  faInstagram,
+  faGitlab
 } from '@fortawesome/free-brands-svg-icons'
 
 import {
@@ -32,7 +35,10 @@ library.add(
   faDocker,
   faNewspaper,
   faYoutube,
+  faMedium,
   faTools,
+  faInstagram,
+  faGitlab
 
 )
 
