@@ -4,21 +4,31 @@ stages:
 
 variables:
   APPLICATION_NAME: homepage
-  CONTAINER_REGISTRY: registry.maximemoreillon.com
-  CERTIFICATE_DOMAIN: maximemoreillon.com
+  DOCKER_IMAGE: ${DOCKER_HUB_USERNAME}/${APPLICATION_NAME}
 
 containerization:
   stage: containerization
+  tags:
+    - moreillon
   script:
-    - docker build -t ${CONTAINER_REGISTRY}/${APPLICATION_NAME} .
-    - docker push ${CONTAINER_REGISTRY}/${APPLICATION_NAME}
+    # Docker hub login
+    - echo "${DOCKER_HUB_PASSWORD}" | docker login --username ${DOCKER_HUB_USERNAME} --password-stdin
+    # Build the docker image
+    - docker build -t ${DOCKER_IMAGE} .
+    # Pushing image to registry
+    - docker push ${DOCKER_IMAGE}
+    # Cleanup
+    - docker image rm ${DOCKER_IMAGE}
 
 deployment:
   stage: deployment
+  tags:
+    - moreillon
   script:
-    - envsubst < deployment.yml | kubectl apply -f -
+    # Pull latest image by restarting the deployment
     - kubectl rollout restart deployment/${APPLICATION_NAME}
   environment:
-    name: staging
+    name: production
     kubernetes:
-      namespace: moreillon
+      # Obtained from GitLab
+      namespace: ${KUBERNETES_NAMESPACE}
