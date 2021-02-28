@@ -5,24 +5,24 @@
     <!-- The full logo that overlays with the parts once animation is done
      This is used to hide seams between logo parts -->
     <div class="logo_layer logo_layer_full">
-      <img class="logo_part logo_full" src="@/assets/logo/logo.svg">
+      <img class="logo_part logo_full" src="logo/logo.svg">
     </div>
 
     <!-- Logo layers that can rotate independantly -->
     <div class="logo_layer logo_layer_1">
-      <img class="logo_part logo_part_1" src="@/assets/logo/1.svg">
-      <img class="logo_part logo_part_2" src="@/assets/logo/2.svg">
-      <img class="logo_part logo_part_3" src="@/assets/logo/3.svg">
+      <img class="logo_part logo_part_1" src="logo/parts/1.svg">
+      <img class="logo_part logo_part_2" src="logo/parts/2.svg">
+      <img class="logo_part logo_part_3" src="logo/parts/3.svg">
     </div>
     <div class="logo_layer logo_layer_2">
-      <img class="logo_part logo_part_4" src="@/assets/logo/4.svg">
-      <img class="logo_part logo_part_5" src="@/assets/logo/5.svg">
-      <img class="logo_part logo_part_6" src="@/assets/logo/6.svg">
+      <img class="logo_part logo_part_4" src="logo/parts/4.svg">
+      <img class="logo_part logo_part_5" src="logo/parts/5.svg">
+      <img class="logo_part logo_part_6" src="logo/parts/6.svg">
     </div>
     <div class="logo_layer logo_layer_3">
-      <img class="logo_part logo_part_7" src="@/assets/logo/7.svg">
-      <img class="logo_part logo_part_8" src="@/assets/logo/8.svg">
-      <img class="logo_part logo_part_9" src="@/assets/logo/9.svg">
+      <img class="logo_part logo_part_7" src="logo/parts/7.svg">
+      <img class="logo_part logo_part_8" src="logo/parts/8.svg">
+      <img class="logo_part logo_part_9" src="logo/parts/9.svg">
     </div>
 
 
