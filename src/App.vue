@@ -8,7 +8,7 @@
     <div class="right">
       <div class="name">Maxime Moreillon</div>
 
-      <div class="subtitle">IoT, AI & Web solutions</div>
+      <div class="subtitle">IoT & Web solutions</div>
 
       <div class="links_wrapper">
 
@@ -18,22 +18,6 @@
           :icon="link.icon"
           :label="link.label"
           :url="link.url"/>
-
-        <!--
-        <div class="links_column">
-          <Link :icon="['fas','newspaper']" label="Articles" url="https://cms.maximemoreillon.com"/>
-          <Link :icon="['fas','tools']" label="Projects" url="https://cms.maximemoreillon.com/?tag_id=111"/>
-
-        </div>
-        <div class="links_column">
-          <Link :icon="['fab','facebook']" label="Facebook" url="https://www.facebook.com/maxime.moreillon"/>
-          <Link :icon="['fab','linkedin']" label="Linkedin" url="https://www.linkedin.com/in/maxime-moreillon/"/>
-        </div>
-        <div class="links_column">
-          <Link :icon="['fab','github']" label="Github" url="https://github.com/maximemoreillon"/>
-          <Link :icon="['fas','graduation-cap']" label="Google scholar" url="https://scholar.google.com/citations?user=0gkCupAAAAAJ&hl=en"/>
-        </div>
-        -->
 
       </div>
     </div>
@@ -63,9 +47,9 @@ export default {
     return {
       links: [
         {icon: ['fas','newspaper'], label: 'Articles', url: 'https://cms.maximemoreillon.com'},
-        {icon: ['fas','tools'], label: 'Projects', url: 'https://cms.maximemoreillon.com/?tag_id=111'},
+        {icon: ['fas','tools'], label: 'Projects', url: 'https://articles.maximemoreillon.com/articles?tag_id=111'},
         {icon: ['fab','linkedin'], label: 'LinkedIn', url: 'https://www.linkedin.com/in/maxime-moreillon'},
-        {icon: ['fab','facebook'], label: 'Facebook', url: 'https://cms.maximemoreillon.com'},
+        {icon: ['fab','facebook'], label: 'Facebook', url: 'https://www.facebook.com/maxime.moreillon/'},
         {icon: ['fab','instagram'], label: 'Instagram', url: 'https://www.instagram.com/maxime_moreillon/'},
         {icon: ['fab','youtube'], label: 'YouTube', url: 'https://www.youtube.com/channel/UCvk0FMjKbin0FGU9LPe-T_g'},
         {icon: ['fab','docker'], label: 'Docker Hub', url: 'https://hub.docker.com/u/moreillon'},
