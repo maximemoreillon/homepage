@@ -1,24 +1,7 @@
-# homepage_front
+# Homepage
 
-## Project setup
-```
-npm install
-```
+This is the code for my homepage, https://maximemoreillon.com
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This homepage is built using Vue.js, containerized using Docker and then deployed to my Kubernetes cluster.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Yes, this is overkill.
