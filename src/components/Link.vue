@@ -1,9 +1,22 @@
 <template>
-  <a class="link" v-bind:href="url">
+  <a
+    class="link"
+    :href="link.url">
+
     <font-awesome-icon
+      v-if="link.icon"
       class="icon"
-      v-bind:icon="icon" />
-    <span class="label">{{label}}</span>
+      :icon="link.icon" />
+
+    <img
+      v-if="link.image"
+      :src="link.image"
+      alt="">
+
+    <span
+      class="label">
+      {{link.label}}
+    </span>
   </a>
 </template>
 
@@ -19,10 +32,11 @@ export default {
 
   },
   props: {
-    label: String,
-    icon: Array,
-    url: String,
+    link: Object,
   },
+  computed: {
+
+  }
 
 }
 </script>
@@ -31,18 +45,23 @@ export default {
 <style scoped>
 
 a {
-  font-size: 1.75vw;
+  /* font-size: 3vmin; */
   text-decoration: none;
   color: black;
-  padding: 0.5vw 0;
+  padding: 1vmin;
+  margin: 1vmin;
 
   transition: color 0.25s;
 
-  /*
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+
+
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  */
+
 }
 
 a:hover{
@@ -59,9 +78,17 @@ a:hover{
 
 }
 
+img {
+  width: 1.1em;
+  height: 1.1em;
+  object-fit: contain;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
 .label {
-  /* margin between icon and lavel */
-  //margin-left: 0.5vw;
+  /* margin between icon and label */
+  margin: 0.25em;
 }
 
 </style>

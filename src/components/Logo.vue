@@ -1,6 +1,6 @@
 <template>
   <!-- Logo wrapper for global rotation -->
-  <div class="logo_wrapper">
+  <div class="logo_wrapper" ref="logoWrapper">
 
     <!-- The full logo that overlays with the parts once animation is done
      This is used to hide seams between logo parts -->
@@ -35,9 +35,13 @@ export default {
   name: 'Logo',
   data(){
     return {
-      window_loaded: false,
     }
   },
+  mounted(){
+    window.onload = () => {
+      this.$refs.logoWrapper.classList.add("loaded")
+    }
+  }
 
 
 }
@@ -49,8 +53,10 @@ export default {
   /* This is a rotating frame for all logo elements */
 
   /* sizing */
+  /*
   width: 20vw;
   height: 20vw;
+  */
 
   /* IE compatibility */
   position: relative;

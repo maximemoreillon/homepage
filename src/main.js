@@ -15,18 +15,21 @@ import {
   faYoutube,
   faMedium,
   faInstagram,
-  faGitlab
+  faGitlab,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 
 import {
   faGraduationCap, // Google scholar
   faNewspaper,
   faTools,
+  faAward
 } from '@fortawesome/free-solid-svg-icons'
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 library.add(
+  faTwitter,
   faGithub,
   faFacebook,
   faLinkedin,
@@ -36,9 +39,10 @@ library.add(
   faNewspaper,
   faYoutube,
   faMedium,
-  faTools,
+  faTools, // Projects
   faInstagram,
-  faGitlab
+  faGitlab,
+  faAward
 
 )
 
