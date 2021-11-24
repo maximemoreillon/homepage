@@ -64,7 +64,7 @@ export default {
       links: [
         {icon: ['fas','newspaper'], label: 'Articles', url: 'https://cms.maximemoreillon.com', category: 'Software development'},
         {icon: ['fas','tools'], label: 'Projects', url: 'https://articles.maximemoreillon.com/articles?tag_id=111', category: 'Software development'},
-        {icon: ['fab','medium'], label: 'Medium', url: 'https://medium.com/@m.moreillon', category: 'Software development'},
+        {icon: ['fab','medium'], label: 'Medium', url: 'https://moreillon.medium.com/', category: 'Software development'},
         {icon: ['fab','facebook'], label: 'Facebook', url: 'https://www.facebook.com/maxime.moreillon', category: 'Social media'},
         {icon: ['fab','twitter'], label: 'Twitter', url: 'https://twitter.com/m_moreillon', category: 'Social media'},
         {icon: ['fab','instagram'], label: 'Instagram', url: 'https://www.instagram.com/maxime_moreillon/', category: 'Social media'},
