@@ -9,22 +9,26 @@
     </div>
 
     <!-- Logo layers that can rotate independantly -->
-    <div class="logo_layer logo_layer_1">
-      <img class="logo_part logo_part_1" src="logo/parts/1.svg">
-      <img class="logo_part logo_part_2" src="logo/parts/2.svg">
-      <img class="logo_part logo_part_3" src="logo/parts/3.svg">
-    </div>
-    <div class="logo_layer logo_layer_2">
-      <img class="logo_part logo_part_4" src="logo/parts/4.svg">
-      <img class="logo_part logo_part_5" src="logo/parts/5.svg">
-      <img class="logo_part logo_part_6" src="logo/parts/6.svg">
-    </div>
-    <div class="logo_layer logo_layer_3">
-      <img class="logo_part logo_part_7" src="logo/parts/7.svg">
-      <img class="logo_part logo_part_8" src="logo/parts/8.svg">
-      <img class="logo_part logo_part_9" src="logo/parts/9.svg">
-    </div>
+    <div
+      v-for="layer in [1,2,3]"
+      :key="`layer_${layer}`"
+      :class="`logo_layer logo_layer_${layer}`"
+      >
 
+      <div
+        v-for="part in [1,2,3]"
+        :key="`layer_${layer}_part_${part}`"
+        :class="`layer_${layer}_part_${part}`"
+        >
+
+        <img
+          :class="`logo_part logo_part_${(layer-1) * 3 + part}`"
+          :src="`/logo/parts/${(layer-1) * 3 + part}.svg`"
+          :alt="`logo_part_${(layer-1) * 3 + part}`">
+
+      </div>
+
+    </div>
 
 
   </div>
