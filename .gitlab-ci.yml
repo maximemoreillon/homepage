@@ -9,7 +9,7 @@ variables:
   CONTAINER_IMAGE_LATEST: ${CONTAINER_IMAGE}:latest
   CONTAINER_IMAGE_TAGGED: ${CONTAINER_IMAGE}:${CI_COMMIT_SHORT_SHA}
   K8S_INGRESS_HOST: maximemoreillon.com
-  
+
 image: moreillon/ci-dind
 services:
   - name: docker:19.03.12-dind
@@ -42,7 +42,7 @@ deploy:
   only:
     - master
   script:
-    - envsubst < kubernetes/deployment.yml | kubectl apply -f -
+    - envsubst < kubernetes_manifest.yml | kubectl apply -f -
   environment:
     name: production
     kubernetes:
