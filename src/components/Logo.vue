@@ -5,7 +5,10 @@
     <!-- The full logo that overlays with the parts once animation is done
      This is used to hide seams between logo parts -->
     <div class="logo_layer logo_layer_full">
-      <img class="logo_part logo_full" src="logo/logo.svg">
+      <img
+        class="logo_part logo_full"
+        src="logo/logo.svg"
+        alt="Maxime Moreillon Logo">
     </div>
 
     <!-- Logo layers that can rotate independantly -->
