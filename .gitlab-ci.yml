@@ -1,36 +1,49 @@
 stages:
-  - containerization
-  - deployment
+  - build
+  - deploy
 
 variables:
   APPLICATION_NAME: homepage
-  DOCKER_IMAGE: ${DOCKER_HUB_USERNAME}/${APPLICATION_NAME}
-  CERTIFICATE_DOMAIN: maximemoreillon.com
+  CONTAINER_REGISTRY: ${DOCKER_HUB_USERNAME}
+  CONTAINER_IMAGE: ${CONTAINER_REGISTRY}/${APPLICATION_NAME}
+  CONTAINER_IMAGE_LATEST: ${CONTAINER_IMAGE}:latest
+  CONTAINER_IMAGE_TAGGED: ${CONTAINER_IMAGE}:${CI_COMMIT_SHORT_SHA}
+  K8S_INGRESS_HOST: maximemoreillon.com
+  
+image: moreillon/ci-dind
+services:
+  - name: docker:19.03.12-dind
 
-containerization:
-  stage: containerization
+
+build:
+  stage: build
   tags:
-    - moreillon
-  script:
+    - dind
+  only:
+    - master
+  before_script:
     # Docker hub login
     - echo "${DOCKER_HUB_PASSWORD}" | docker login --username ${DOCKER_HUB_USERNAME} --password-stdin
-    # Build the docker image
-    - docker build -t ${DOCKER_IMAGE} .
-    # Pushing image to registry
-    - docker push ${DOCKER_IMAGE}
-    # Cleanup
-    - docker image rm ${DOCKER_IMAGE}
-
-deployment:
-  stage: deployment
-  tags:
-    - moreillon
   script:
-    - envsubst < kubernetes_manifest.yml | kubectl apply -f -
-    # Pull latest image by restarting the deployment
-    - kubectl rollout restart deployment/${APPLICATION_NAME}
+    # Building the container image
+    - docker build -t ${CONTAINER_IMAGE} .
+    # Tagging
+    - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE_TAGGED}
+    - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE_LATEST}
+    # Pushing
+    - docker push ${CONTAINER_IMAGE_TAGGED}
+    - docker push ${CONTAINER_IMAGE_LATEST}
+
+
+deploy:
+  stage: deploy
+  tags:
+    - dind
+  only:
+    - master
+  script:
+    - envsubst < kubernetes/deployment.yml | kubectl apply -f -
   environment:
     name: production
     kubernetes:
-      # Obtained from GitLab
       namespace: ${KUBERNETES_NAMESPACE}

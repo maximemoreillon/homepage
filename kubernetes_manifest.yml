@@ -14,12 +14,9 @@ spec:
     spec:
       containers:
       - name: ${APPLICATION_NAME}
-        image: ${DOCKER_IMAGE}
-        imagePullPolicy: Always
+        image: ${CONTAINER_IMAGE_TAGGED}
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: registry-credentials # Used to log in the registry
 ---
 # Service, so that the deployment can communicate with other services
 apiVersion: v1
@@ -40,14 +37,14 @@ metadata:
   name: ${APPLICATION_NAME} # Name of the ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod" # This is necessary, no idea why
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" # Use the production certificate issuer
 spec:
   tls:
   - hosts:
-    - ${CERTIFICATE_DOMAIN}
+    - ${K8S_INGRESS_HOST}
     secretName: ${APPLICATION_NAME} # Name of the secret, i.e. the certificates
   rules:
-  - host: ${CERTIFICATE_DOMAIN}
+  - host: ${K8S_INGRESS_HOST}
     http:
       paths:
       - path: /
