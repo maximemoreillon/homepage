@@ -7,10 +7,8 @@
 
       <Logo class="logo"/>
 
-      <!-- Multiple H1 is bad practice -->
       <div class="header">
-        <h1 class="first_name">Maxime</h1>
-        <h1 class="family_name">Moreillon</h1>
+        <h1>Maxime<br>MOREILLON</h1>
         <SubtitleCarousel />
       </div>
 
@@ -127,6 +125,8 @@ body {
 
 .header {
   grid-area: header;
+  /* Default to invisible */
+  opacity: 0;
 }
 
 body.loaded .header  {
@@ -143,11 +143,7 @@ h1 {
   margin: 0;
   font-size: 8vmin;
 }
-.first_name { }
 
-.family_name {
-  text-transform: uppercase;
-}
 
 .links_wrappper {
 
