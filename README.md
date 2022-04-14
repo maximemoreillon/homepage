@@ -8,5 +8,5 @@ Yes, this is overkill.
 
 
 <p align="center">
-  <img width="460" height="300" src="./public/logo/logo.png">
+  <img width="200" height="200" src="./public/logo/logo.png">
 </p>
