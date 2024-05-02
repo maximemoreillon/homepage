@@ -101,29 +101,28 @@ export default [
   //   url: "https://oshwlab.com/m.moreillon",
   //   category: "Mechatronics",
   // },
-  // {
-  //   icon: "simple-icons:thingiverse",
-  //   label: "Thingiverse",
-  //   url: "https://www.thingiverse.com/moreillon/designs",
-  //   category: "Mechatronics",
-  // },
-
-  // {
-  //   icon: "mdi:instagram",
-  //   label: "Instagram",
-  //   url: "https://www.instagram.com/maxime_moreillon_modeling",
-  //   category: "Modeling",
-  // },
+  {
+    icon: "simple-icons:thingiverse",
+    label: "Thingiverse",
+    url: "https://www.thingiverse.com/moreillon/designs",
+    category: "Mechatronics",
+  },
+  {
+    icon: "mdi:account",
+    label: "Modeling profile",
+    url: "https://modeling.maximemoreillon.com",
+    category: "Modeling",
+  },
+  {
+    icon: "mdi:instagram",
+    label: "Instagram (Modeling)",
+    url: "https://www.instagram.com/maxime_moreillon_modeling",
+    category: "Modeling",
+  },
   {
     icon: "azs",
     label: "AZS entertainment",
     url: "https://azs-group.jp/manage_post/990",
     category: "Modeling",
   },
-  // {
-  //   image: "mdi:account",
-  //   label: "Profile",
-  //   url: "https://modeling.maximemoreillon.com",
-  //   category: "Modeling",
-  // },
 ]
