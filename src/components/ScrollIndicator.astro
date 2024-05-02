@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 
 ---
-<div class="scroll_indicator">
+<div class="scroll_indicator" id="scrollIndicator">
 
   {[1,2,3].map(i => 
   <Icon 
@@ -11,10 +11,11 @@ import { Icon } from 'astro-icon/components'
     style={{'animation-delay': `${5 + 0.1 * i}s`}}/>
   )}
 
-  
-
-
 </div>
+
+<script>
+  window.addEventListener("scroll", () => document.getElementById('scrollIndicator')?.classList.add('invisible'))
+</script>
 
 
 <style>
@@ -26,6 +27,12 @@ import { Icon } from 'astro-icon/components'
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  transition: opacity 1s;
+}
+
+.scroll_indicator.invisible {
+  opacity: 0;
 }
 
 .chevron {
@@ -35,6 +42,7 @@ import { Icon } from 'astro-icon/components'
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
+  
 }
 
 @keyframes arrow-flash {
