@@ -16,7 +16,7 @@ spec:
         - name: ${APPLICATION_NAME}
           image: ${CONTAINER_IMAGE_TAGGED}
           ports:
-            - containerPort: 80
+            - containerPort: 8080
 ---
 # Service, so that the deployment can communicate with other services
 apiVersion: v1
@@ -25,7 +25,7 @@ metadata:
   name: ${APPLICATION_NAME}
 spec:
   ports:
-    - port: 80
+    - port: 8080
   selector:
     app: ${APPLICATION_NAME} # Name of the service
   type: ClusterIP
@@ -51,4 +51,4 @@ spec:
               service:
                 name: ${APPLICATION_NAME}
                 port:
-                  number: 80
+                  number: 8080
