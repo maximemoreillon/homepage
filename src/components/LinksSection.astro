@@ -1,0 +1,36 @@
+---
+
+import ExternalLink from './ExternalLink.astro';
+import links from '../links';
+
+// const categories = [...new Set(links.map(l => l.category))]
+
+---
+
+<section>
+  { links.map(link => <ExternalLink link={link}/> )}
+</section>
+
+
+<style>
+
+section {
+  /* height: 100vh; */
+  padding-inline: 2em;
+  max-width: 50rem;
+  margin: 4em;
+  margin-inline: auto; 
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center; 
+  align-items: center; */
+  
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  align-items: center;
+  justify-items: center;
+
+}
+</style>

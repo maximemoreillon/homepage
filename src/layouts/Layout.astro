@@ -1,0 +1,38 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/logo/logo.svg" />
+		<title>Maxime Moreillon</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: #c00000;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		font-size: 20px;
+		/* font-size: 100%; */
+		
+	}
+	body {
+		padding: 0;
+		margin: 0;
+	}
+
+</style>

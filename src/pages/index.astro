@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import LinksSection from '../components/LinksSection.astro';
+
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Hero />
+		<LinksSection />
+
+	</main>
+</Layout>
+
+<style>
+	main {
+
+	}
+
+	section {
+		
+	}
+</style>
+
+<script>
+
+window.onload = () => {
+	document.body.classList.add("loaded")
+}
+
+</script>

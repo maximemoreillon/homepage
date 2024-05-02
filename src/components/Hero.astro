@@ -1,0 +1,91 @@
+---
+import Logo from './Logo.astro'
+import ScrollIndicator from './ScrollIndicator.astro'
+---
+
+
+<header>
+  <div class="logo">
+    <Logo>
+  </div>
+  <h1 class="name">Maxime<br>Moreillon</h1>
+  <div class="subtitle">IoT / Web / DevOps</div>
+
+  <ScrollIndicator />
+
+</header>
+
+
+    
+
+
+<style>
+
+
+	header {
+    position: relative;
+		display: grid;
+		height: 100vh;
+    font-size: 4vmin;
+    gap: 0 1em ;
+
+    grid-template-areas: 
+      '. . . .'
+      '. logo name .'
+      '. logo subtitle .'
+      '. . . .';
+
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows: 1fr auto auto 1fr;
+  
+
+		
+	}
+
+
+  .name {
+    grid-area: name;
+    margin: 0;
+  }
+
+  .subtitle { 
+    grid-area: subtitle;
+    color: #666666
+  }
+
+
+  body.loaded .name, body.loaded .subtitle {
+    animation-name: fade;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+  }
+
+  
+
+  .logo {
+    grid-area: logo;
+    width: 7.5em;
+    height: 7.5em;
+  }
+
+
+
+
+
+  @keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+</style>

@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon/components'
+
+---
+<div class="scroll_indicator" id="scrollIndicator">
+
+  {[1,2,3].map(i => 
+  <Icon 
+    name="mdi:chevron-down" 
+    class="chevron"
+    style={{'animation-delay': `${5 + 0.1 * i}s`}}/>
+  )}
+
+</div>
+
+<script>
+  window.addEventListener("scroll", () => document.getElementById('scrollIndicator')?.classList.add('invisible'))
+</script>
+
+
+<style>
+.scroll_indicator {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 1s;
+}
+
+.scroll_indicator.invisible {
+  opacity: 0;
+}
+
+.chevron {
+  margin-top: -0.6em;
+
+  animation-name: arrow-flash;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  
+}
+
+@keyframes arrow-flash {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  20% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+</style>
