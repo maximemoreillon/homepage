@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components'
+const { link } = Astro.props;
+const {url, icon, label, image} = link
+---
+
+<a href={url}>
+
+  {icon ? <Icon name={icon} /> : undefined }
+  
+
+  <span>
+    {label}
+  </span>
+</a>
+
+
+<style>
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+
+    transition: color 0.1s;
+
+    
+  }
+
+  a:hover {
+    color: var(--accent)
+  }
+
+
+</style>
