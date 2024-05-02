@@ -2,8 +2,6 @@
 interface Props {
 	title: string;
 }
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +11,49 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/logo/logo.svg" />
+
+		<!-- meta tags for SEO -->
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="keywords"
+			content="DevOps, IoT, Web, Software, Projects, Maxime, Moreillon"
+		/>
+		<meta
+			name="description"
+			content="Personal website of Maxime Moreillon"
+		/>
+
+		<!-- OpenGraph (Facebook) -->
+		<meta property="og:title" content="neighbridge" />
+		<meta
+			property="og:description"
+			content="Personal website of Maxime Moreillon"
+		/>
+		<meta property="og:url" content="https://neighbridge.com" />
+		<meta
+			property="og:image"
+			content="https://maximemoreillon.com/logo/logo.svg"
+		/>
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:title" content="Maxime Moreillon" />
+		<meta
+			property="twitter:description"
+			content="Personal website of Maxime Moreillon"
+		/>
+		<meta
+			property="twitter:image"
+			content="https://maximemoreillon.com/logo/logo.svg"
+		/>
+		<meta property="twitter:image:alt" content="Maxime Moreillon logo" />
+
+
+		<link rel="icon" type="image/svg+xml" href="logo/logo.svg" />
+    <link rel="canonical" href="https://maximemoreillon.com" />
+
+
 		<title>Maxime Moreillon</title>
 	</head>
 	<body>
