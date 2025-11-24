@@ -107,22 +107,22 @@ export default [
     url: "https://www.thingiverse.com/moreillon/designs",
     category: "Mechatronics",
   },
-  {
-    icon: "mdi:account",
-    label: "Modeling profile",
-    url: "https://modeling.maximemoreillon.com",
-    category: "Modeling",
-  },
-  {
-    icon: "mdi:instagram",
-    label: "Instagram (Modeling)",
-    url: "https://www.instagram.com/maxime_moreillon_modeling",
-    category: "Modeling",
-  },
-  {
-    icon: "azs",
-    label: "AZS entertainment",
-    url: "https://azs-group.jp/manage_post/990",
-    category: "Modeling",
-  },
-]
+  // {
+  //   icon: "mdi:account",
+  //   label: "Modeling profile",
+  //   url: "https://modeling.maximemoreillon.com",
+  //   category: "Modeling",
+  // },
+  // {
+  //   icon: "mdi:instagram",
+  //   label: "Instagram (Modeling)",
+  //   url: "https://www.instagram.com/maxime_moreillon_modeling",
+  //   category: "Modeling",
+  // },
+  // {
+  //   icon: "azs",
+  //   label: "AZS entertainment",
+  //   url: "https://azs-group.jp/manage_post/990",
+  //   category: "Modeling",
+  // },
+];
