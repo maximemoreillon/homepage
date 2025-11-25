@@ -2,15 +2,15 @@ export default [
   {
     icon: "mdi:newspaper",
     label: "Articles",
-    url: "https://cms.maximemoreillon.com",
+    url: "https://articles.maximemoreillon.com",
     category: "Software",
   },
-  {
-    icon: "mdi:tools",
-    label: "Projects",
-    url: "https://articles.maximemoreillon.com/articles?tag_id=111",
-    category: "Software",
-  },
+  // {
+  //   icon: "mdi:tools",
+  //   label: "Projects",
+  //   url: "https://articles.maximemoreillon.com/articles?tag_id=111",
+  //   category: "Software",
+  // },
   {
     icon: "simple-icons:medium",
     label: "Medium",
@@ -38,7 +38,7 @@ export default [
   {
     icon: "mdi:youtube",
     label: "YouTube",
-    url: "https://www.youtube.com/channel/UCvk0FMjKbin0FGU9LPe-T_g",
+    url: "https://www.youtube.com/@MaximeMoreillon",
     category: "Social media",
   },
   {
